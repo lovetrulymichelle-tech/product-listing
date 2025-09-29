@@ -1,0 +1,6 @@
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+RUN ls -la node_modules/express/
+RUN cat node_modules/express/package.json | head -5
