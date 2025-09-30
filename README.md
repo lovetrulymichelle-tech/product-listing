@@ -118,7 +118,7 @@ This application is configured to deploy to Vercel with the custom domain `hustl
    - Visit `https://hustlebaddie.net/health` to check API status
    - Visit `https://hustlebaddie.net/api/products` to test the products endpoint
 
-The `vercel.json` configuration file is already set up with the custom domain aliases.
+The `vercel.json` configuration file is set up to route all requests to the Express app. Custom domains should be configured in the Vercel dashboard after deployment.
 
 ## License
 
