@@ -89,6 +89,36 @@ This application is ready to deploy to:
 - **Cloud Platforms**: Deploy to AWS ECS, Google Cloud Run, Azure Container Instances
 - **Container Platforms**: Kubernetes, Docker Swarm
 - **Platform-as-a-Service**: Heroku, Railway, Render
+- **Vercel**: Configured with custom domain support
+
+### Deploy to Vercel
+
+This application is configured to deploy to Vercel with the custom domain `hustlebaddie.net`.
+
+#### Prerequisites
+- Install [Vercel CLI](https://vercel.com/docs/cli): `npm i -g vercel`
+- Have a Vercel account
+
+#### Deployment Steps
+
+1. **Deploy to Vercel:**
+   ```bash
+   vercel
+   ```
+
+2. **Add Custom Domain:**
+   - Go to your project settings in Vercel dashboard
+   - Navigate to "Domains" section
+   - Add `hustlebaddie.net` and `www.hustlebaddie.net`
+   - Configure DNS records as instructed by Vercel:
+     - Add an `A` record pointing to Vercel's IP: `76.76.21.21`
+     - Or add a `CNAME` record pointing to `cname.vercel-dns.com`
+   
+3. **Verify Deployment:**
+   - Visit `https://hustlebaddie.net/health` to check API status
+   - Visit `https://hustlebaddie.net/api/products` to test the products endpoint
+
+The `vercel.json` configuration file is already set up with the custom domain aliases.
 
 ## License
 
