@@ -1,0 +1,9 @@
+node_modules
+.git
+.github
+test
+*.md
+.env
+.dockerignore
+Dockerfile
+.DS_Store

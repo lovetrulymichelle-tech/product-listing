@@ -1,13 +1,15 @@
 # Product Listing API - Deployment Status
 
-## Current Status: VERCEL CONFIGURED
-The Product Listing API is **configured for Vercel deployment** with custom domain `hustlebaddie.net`. The application is ready to be deployed to Vercel.
+## Current Status: READY FOR VERCEL DEPLOYMENT
+The Product Listing API is **ready to deploy to Vercel** with optimized configuration. The application has been configured with a proper serverless entry point and deployment scripts.
 
 ### Vercel Configuration
-✅ **vercel.json**: Configuration file created with custom domain setup  
-✅ **Custom Domain**: Configured to use `hustlebaddie.net` and `www.hustlebaddie.net`  
+✅ **vercel.json**: Optimized configuration with serverless function setup  
+✅ **API Entry Point**: Created `api/index.js` for Vercel's serverless environment  
 ✅ **Build Settings**: Configured to use @vercel/node for Express.js app  
 ✅ **Environment**: Production environment variables configured  
+✅ **Deployment Scripts**: Added `npm run deploy` and `npm run deploy:preview`  
+✅ **.vercelignore**: Configured to exclude unnecessary files from deployment  
 
 ## Application Status
 ✅ **Working Application**: The Node.js/Express app runs successfully locally  
@@ -43,26 +45,41 @@ The application is deployment-ready and can be deployed to:
 ## To Deploy to Vercel
 
 ### Quick Deploy
+
+**For detailed instructions, see [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)**
+
 1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in the project directory
-3. Follow the prompts to link to your Vercel account
-4. Add custom domain in Vercel dashboard:
-   - Go to Project Settings → Domains
-   - Add `hustlebaddie.net` and `www.hustlebaddie.net`
-   - Configure DNS records as instructed by Vercel
+2. Login: `vercel login`
+3. Deploy to production: `npm run deploy`
+4. (Optional) Deploy preview: `npm run deploy:preview`
+
+### What's Ready
+
+- ✅ Serverless function entry point at `api/index.js`
+- ✅ Optimized `vercel.json` configuration
+- ✅ Deployment scripts in package.json
+- ✅ .vercelignore file to exclude unnecessary files
+- ✅ All routes configured for serverless environment
+
+### Custom Domain Setup (Optional)
+
+After deployment, add custom domain in Vercel dashboard:
+- Go to Project Settings → Domains
+- Add your domain (e.g., `hustlebaddie.net`)
+- Follow Vercel's DNS configuration instructions
 
 ### DNS Configuration
-Configure your domain registrar with one of these options:
+For custom domain setup, configure your domain registrar with one of these options:
 
-**Option 1: A Record**
-- Type: `A`
-- Name: `@` (for root domain)
-- Value: `76.76.21.21` (Vercel's IP)
-
-**Option 2: CNAME Record**
+**Option 1: CNAME Record (Recommended)**
 - Type: `CNAME`
 - Name: `@` or your domain
 - Value: `cname.vercel-dns.com`
+
+**Option 2: A Record**
+- Type: `A`
+- Name: `@` (for root domain)
+- Value: `76.76.21.21` (Vercel's IP)
 
 For www subdomain:
 - Type: `CNAME`
@@ -70,10 +87,14 @@ For www subdomain:
 - Value: `cname.vercel-dns.com`
 
 ### Verify Deployment
-Once deployed:
-- `https://hustlebaddie.net/health` - Health check endpoint
+Once deployed, your API will be available at your Vercel URL:
+- `https://your-project.vercel.app/health` - Health check endpoint
+- `https://your-project.vercel.app/api/products` - Products API
+- `https://your-project.vercel.app/` - API information
+
+If you configure a custom domain:
+- `https://hustlebaddie.net/health` - Health check
 - `https://hustlebaddie.net/api/products` - Products API
-- `https://hustlebaddie.net/` - API information
 
 ## To Deploy to Other Platforms
 1. Fix the Docker configuration issue (minor)
@@ -82,4 +103,13 @@ Once deployed:
 4. Configure domain/hosting as needed
 
 ## Conclusion
-**Answer: The application is CONFIGURED FOR VERCEL** with custom domain `hustlebaddie.net`. The application is fully functional and deployment-ready with vercel.json configuration in place. Simply run `vercel` to deploy and configure the domain in your Vercel dashboard.
+**Answer: The application is READY FOR VERCEL DEPLOYMENT** with optimized serverless configuration. The application is fully functional and deployment-ready with:
+
+- ✅ Serverless entry point at `api/index.js`
+- ✅ Optimized `vercel.json` configuration
+- ✅ Deployment scripts: `npm run deploy` and `npm run deploy:preview`
+- ✅ Complete deployment documentation in `VERCEL_DEPLOYMENT.md`
+
+Simply run `npm run deploy` or connect your GitHub repository to Vercel for automatic deployments.
+
+For detailed deployment instructions, see **[VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)**.

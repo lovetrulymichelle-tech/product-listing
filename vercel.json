@@ -3,19 +3,17 @@
   "name": "product-listing",
   "builds": [
     {
-      "src": "src/app.js",
+      "src": "api/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/app.js"
+      "dest": "api/index.js"
     }
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "regions": ["iad1"],
-  "alias": ["hustlebaddie.net", "www.hustlebaddie.net"]
+  }
 }
