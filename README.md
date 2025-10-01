@@ -93,32 +93,41 @@ This application is ready to deploy to:
 
 ### Deploy to Vercel
 
-This application is configured to deploy to Vercel with the custom domain `hustlebaddie.net`.
+This application is fully configured and ready to deploy to Vercel.
 
-#### Prerequisites
-- Install [Vercel CLI](https://vercel.com/docs/cli): `npm i -g vercel`
-- Have a Vercel account
+#### Quick Start
 
-#### Deployment Steps
+```bash
+# Install Vercel CLI
+npm install -g vercel
 
-1. **Deploy to Vercel:**
-   ```bash
-   vercel
-   ```
+# Login to Vercel
+vercel login
 
-2. **Add Custom Domain:**
-   - Go to your project settings in Vercel dashboard
-   - Navigate to "Domains" section
-   - Add `hustlebaddie.net` and `www.hustlebaddie.net`
-   - Configure DNS records as instructed by Vercel:
-     - Add an `A` record pointing to Vercel's IP: `76.76.21.21`
-     - Or add a `CNAME` record pointing to `cname.vercel-dns.com`
-   
-3. **Verify Deployment:**
-   - Visit `https://hustlebaddie.net/health` to check API status
-   - Visit `https://hustlebaddie.net/api/products` to test the products endpoint
+# Deploy to production
+npm run deploy
 
-The `vercel.json` configuration file is already set up with the custom domain aliases.
+# Or deploy a preview
+npm run deploy:preview
+```
+
+#### Complete Deployment Guide
+
+For detailed deployment instructions, troubleshooting, and configuration options, see **[VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)**.
+
+#### What's Configured
+
+✅ **vercel.json**: Serverless function configuration  
+✅ **API Entry Point**: Optimized for Vercel's serverless environment  
+✅ **Deployment Scripts**: `npm run deploy` and `npm run deploy:preview`  
+✅ **Environment Variables**: Production settings configured  
+
+#### Verify Deployment
+
+After deployment, test these endpoints:
+- `/health` - Health check
+- `/api/products` - Products listing
+- `/api/products/:id` - Specific product
 
 ## License
 

@@ -8,7 +8,9 @@
     "dev": "node src/app.js",
     "test": "npm run test:unit",
     "test:unit": "node_modules/.bin/mocha test/*.test.js || echo 'Mocha not installed, skipping tests'",
-    "lint": "echo 'No linting configured' && exit 0"
+    "lint": "echo 'No linting configured' && exit 0",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
   },
   "keywords": [
     "product",
